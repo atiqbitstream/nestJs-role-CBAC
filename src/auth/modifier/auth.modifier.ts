@@ -20,3 +20,7 @@ export function getClientPermissions(user: Partial<User>): Set<string> {
   //only reutrn permissions of roles
   return new Set<string>([...rolePermissions]);
 }
+
+export const userHasAnyRole = (user:User,roles:CLientRole[])=>{
+  return user.roles.some(role=>roles.includes(role.name))
+}
